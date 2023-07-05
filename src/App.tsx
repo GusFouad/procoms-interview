@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
+import './App.css'
+import './sass/index.scss'
+import { Employee } from './components/interfaces/employee'
+import { EmployeeList } from './components/lists/employee-list'
+import { CreateEmployee } from './components/forms/create-employee'
 
 function App() {
+  const [employees, setEmployees] = useState<Employee[]>([])
+
+  useEffect(() => {
+    function getEmployees() {
+      axios
+        .get(
+          'https://procom-interview-employee-test.azurewebsites.net/employee'
+        )
+        .then(function (response) {
+          setEmployees(response.data)
+        })
+    }
+    getEmployees()
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CreateEmployee />
+      <EmployeeList employees={employees} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,57 @@
+// Font Families
+$font-family-base: 'Poppins', sans-serif;
+$font-size-root: 16px;
+
+// Font Sizes
+$h1-font-size: $font-size-root * 2.25;
+$h2-font-size: $font-size-root * 1.125;
+$h3-font-size: $font-size-root;
+$headings-font-weight: 600;
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size
+);
+
+// Display Font Sizes
+$display-font-sizes: (
+  1: 4rem
+);
+$display-font-weight: 700;
+
+// Font Weights
+$font-weight-lighter: 300;
+$font-weight-light: 400;
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+// Line Heights
+$line-height-base: 1.5;
+$line-height-sm: 1.39;
+$line-height-lg: 1.963;
+
+// Spacers
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2.5,
+  6: $spacer * 3.5,
+  7: $spacer * 4,
+  8: $spacer * 7,
+  9: $spacer * 8,
+  10: $spacer * 10,
+  12: $spacer * 12
+);
+
+// Shadows
+$box-shadow: 0 1px 10px 0 #0000001a;
+
+// Navbar
+$navbar-padding-y: 45px;
+$navbar-nav-link-padding-x: 20px;
+$nav-link-padding-y: 1rem;
